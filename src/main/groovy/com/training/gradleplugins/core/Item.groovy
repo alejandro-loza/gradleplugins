@@ -37,7 +37,7 @@ class Item {
 //  }
 //
 //  def thumbnail() {
-//    def thumb = images.findAll {
+//    def thumb = images.findAll {                       d
 //      it.imageType.enum == ImageTypeEnum.THUMB
 //    }.min { FilenameUtils.getBaseName(it.url) }
 //    thumb
