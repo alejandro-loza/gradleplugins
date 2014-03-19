@@ -52,10 +52,10 @@ class GradlepluginsService extends Service<GradlepluginsConfiguration> {
     @Override
     public void run(GradlepluginsConfiguration configuration, Environment environment) throws ClassNotFoundException {
         // de aqui corren mis resources
-//        final dao = new HibernateItemDAO(hibernateBundle.getSessionFactory());
-        final DBIFactory factory = new DBIFactory();
-        final DBI jdbi = factory.build(environment, configuration.getDatabaseConfiguration(), "mysql");
-        final ItemDAO dao = jdbi.onDemand(ItemDAO.class);
+        final ItemDAO dao = new HibernateItemDAO(hibernateBundle.getSessionFactory());
+//        final DBIFactory factory = new DBIFactory();
+//        final DBI jdbi = factory.build(environment, configuration.getDatabaseConfiguration(), "mysql");
+//        final ItemDAO dao = jdbi.onDemand(ItemDAO.class);
         environment.addResource(new GradlepluginsResource(dao));
     }
 }

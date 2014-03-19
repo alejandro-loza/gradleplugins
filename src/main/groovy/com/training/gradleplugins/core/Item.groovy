@@ -7,10 +7,22 @@ import javax.persistence.Entity
 import javax.persistence.GeneratedValue
 import javax.persistence.GenerationType
 import javax.persistence.Id
+import javax.persistence.NamedQueries
+import javax.persistence.NamedQuery
 import javax.persistence.Table
 
 @Entity
 @Table(name = 'item')
+@NamedQueries([
+        @NamedQuery(
+                name = "com.training.gradleplugins.core.Item.findAll",
+                query = "SELECT i FROM Item i"
+        ),
+        @NamedQuery(
+                name = "com.training.gradleplugins.core.Item.findById",
+                query = "SELECT i FROM Item i WHERE i.id = :id"
+        )
+])
 class Item {
 
     @Id
