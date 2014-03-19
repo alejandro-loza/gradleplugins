@@ -4,3 +4,6 @@
 *.iws
 logs/
 .gradle/
+out/
+build/
+logs/

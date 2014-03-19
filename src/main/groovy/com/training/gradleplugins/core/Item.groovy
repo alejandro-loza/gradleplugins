@@ -1,45 +1,49 @@
 package com.training.gradleplugins.core
 
-//import org.apache.commons.io.FilenameUtils
 import org.joda.time.DateTime
 
+import javax.persistence.Column
+import javax.persistence.Entity
+import javax.persistence.GeneratedValue
+import javax.persistence.GenerationType
+import javax.persistence.Id
+import javax.persistence.Table
+
+@Entity
+@Table(name = 'item')
 class Item {
 
-  Integer priority
-  String attributeName
-  String attributeLabel
-  String attributeValue
-//  ItemStatus status
-  DateTime dateCreated
-  DateTime lastUpdated
-  Boolean deleted = false
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    Long id
 
-////  AttributeType attributeType
-//
-//  String ref
-////  SkuProfile skuProfile
-//  static transients = ['ref', 'skuProfile', 'available']
-//  static hasMany = [skus: Sku, images: Image]
-//  static belongsTo = [itemGroup: ItemGroup]
-//
-//  static constraints = {
-//    attributeName maxSize: 25, blank: false
-//    attributeLabel maxSize: 25
-//
-//  }
-//
-//  static hibernateFilters = {
-//    enabledFilter(condition: 'deleted=0', default: true)
-//  }
-//
-//  boolean isAvailable() {
-//    itemGroup.isAvailable()
-//  }
-//
-//  def thumbnail() {
-//    def thumb = images.findAll {                       d
-//      it.imageType.enum == ImageTypeEnum.THUMB
-//    }.min { FilenameUtils.getBaseName(it.url) }
-//    thumb
-//  }
+    @Column(nullable = false)
+    Integer priority
+
+    @Column(name = 'attribute_name', nullable = false)
+    String attributeName
+
+    @Column(name = 'attribute_label', nullable = false)
+    String attributeLabel
+
+    @Column(name = 'attribute_value', nullable = false)
+    String attributeValue
+
+    @Column(name = 'attribute_type_id', nullable = false)
+    Long attributeTypeId
+
+    @Column(name = 'date_created', nullable = false)
+    DateTime dateCreated
+
+    @Column(name = 'last_updated', nullable = false)
+    DateTime lastUpdated
+
+    @Column(name = 'deleted', nullable = false)
+    Boolean deleted = false
+
+    @Column(name = 'item_group_id', nullable = false)
+    Long itemGroupId
+
+    @Column(name = 'status_id', nullable = false)
+    Long statusId
 }

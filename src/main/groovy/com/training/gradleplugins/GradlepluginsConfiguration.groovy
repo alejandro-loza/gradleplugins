@@ -8,10 +8,12 @@ import javax.validation.Valid
 import javax.validation.constraints.NotNull
 
 class GradlepluginsConfiguration extends Configuration {
+
     @Valid
     @NotNull
     @JsonProperty
-    DatabaseConfiguration databaseConfiguration = new DatabaseConfiguration()
+    private DatabaseConfiguration databaseConfiguration = new DatabaseConfiguration()
+
     public DatabaseConfiguration getDatabaseConfiguration() {
         return databaseConfiguration
     }
