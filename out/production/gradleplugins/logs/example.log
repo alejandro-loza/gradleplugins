@@ -1,0 +1,71 @@
+INFO  [2014-03-12 23:35:43,596] org.hibernate.annotations.common.Version: HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+INFO  [2014-03-12 23:35:43,600] org.hibernate.Version: HHH000412: Hibernate Core {4.1.8.Final}
+INFO  [2014-03-12 23:35:43,601] org.hibernate.cfg.Environment: HHH000206: hibernate.properties not found
+INFO  [2014-03-12 23:35:43,602] org.hibernate.cfg.Environment: HHH000021: Bytecode provider name : javassist
+INFO  [2014-03-12 23:35:43,616] com.yammer.dropwizard.hibernate.SessionFactoryFactory: Entity classes: []
+INFO  [2014-03-12 23:35:44,115] org.hibernate.dialect.Dialect: HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+INFO  [2014-03-12 23:35:44,133] org.hibernate.engine.transaction.internal.TransactionFactoryInitiator: HHH000399: Using default transaction strategy (direct JDBC transactions)
+INFO  [2014-03-12 23:35:44,136] org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory: HHH000397: Using ASTQueryTranslatorFactory
+INFO  [2014-03-12 23:35:44,254] com.yammer.dropwizard.cli.ServerCommand: Starting Gradleplugins
+INFO  [2014-03-12 23:35:44,255] org.eclipse.jetty.server.Server: jetty-8.y.z-SNAPSHOT
+INFO  [2014-03-12 23:35:44,356] com.sun.jersey.server.impl.application.WebApplicationImpl: Initiating Jersey application, version 'Jersey: 1.15 10/30/2012 02:40 PM'
+INFO  [2014-03-12 23:35:44,411] com.yammer.dropwizard.config.Environment: 
+
+
+INFO  [2014-03-12 23:35:44,411] com.yammer.dropwizard.config.Environment: tasks = 
+
+    POST    /tasks/gc (com.yammer.dropwizard.tasks.GarbageCollectionTask)
+
+ERROR [2014-03-12 23:35:44,650] com.sun.jersey.server.impl.application.RootResourceUriRules: The ResourceConfig instance does not contain any root resource classes.
+WARN  [2014-03-12 23:35:44,653] /: unavailable
+! com.sun.jersey.api.container.ContainerException: The ResourceConfig instance does not contain any root resource classes.
+! at com.sun.jersey.server.impl.application.RootResourceUriRules.<init>(RootResourceUriRules.java:99)
+! at com.sun.jersey.server.impl.application.WebApplicationImpl._initiate(WebApplicationImpl.java:1300)
+! at com.sun.jersey.server.impl.application.WebApplicationImpl.access$700(WebApplicationImpl.java:163)
+! at com.sun.jersey.server.impl.application.WebApplicationImpl$13.f(WebApplicationImpl.java:769)
+! at com.sun.jersey.server.impl.application.WebApplicationImpl$13.f(WebApplicationImpl.java:765)
+! at com.sun.jersey.spi.inject.Errors.processWithErrors(Errors.java:193)
+! at com.sun.jersey.server.impl.application.WebApplicationImpl.initiate(WebApplicationImpl.java:765)
+! at com.sun.jersey.server.impl.application.WebApplicationImpl.initiate(WebApplicationImpl.java:760)
+! at com.sun.jersey.spi.container.servlet.ServletContainer.initiate(ServletContainer.java:489)
+! at com.sun.jersey.spi.container.servlet.ServletContainer$InternalWebComponent.initiate(ServletContainer.java:319)
+! at com.sun.jersey.spi.container.servlet.WebComponent.load(WebComponent.java:609)
+! at com.sun.jersey.spi.container.servlet.WebComponent.init(WebComponent.java:210)
+! at com.sun.jersey.spi.container.servlet.ServletContainer.init(ServletContainer.java:374)
+! at com.sun.jersey.spi.container.servlet.ServletContainer.init(ServletContainer.java:557)
+! at javax.servlet.GenericServlet.init(GenericServlet.java:244)
+! at org.eclipse.jetty.servlet.ServletHolder.initServlet(ServletHolder.java:519)
+! at org.eclipse.jetty.servlet.ServletHolder.doStart(ServletHolder.java:331)
+! at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+! at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:747)
+! at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:265)
+! at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:706)
+! at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+! at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:95)
+! at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+! at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:95)
+! at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+! at org.eclipse.jetty.server.handler.HandlerCollection.doStart(HandlerCollection.java:229)
+! at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+! at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:95)
+! at org.eclipse.jetty.server.Server.doStart(Server.java:277)
+! at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+! at com.yammer.dropwizard.cli.ServerCommand.run(ServerCommand.java:48)
+! at com.yammer.dropwizard.cli.EnvironmentCommand.run(EnvironmentCommand.java:39)
+! at com.yammer.dropwizard.cli.ConfiguredCommand.run(ConfiguredCommand.java:58)
+! at com.yammer.dropwizard.cli.Cli.run(Cli.java:53)
+! at com.yammer.dropwizard.Service.run(Service.java:61)
+! at com.yammer.dropwizard.Service$run.call(Unknown Source)
+! at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:45)
+! at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:108)
+! at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:116)
+! at com.training.gradleplugins.GradlepluginsService.main(GradlepluginsService.groovy:13)
+INFO  [2014-03-12 23:35:44,678] org.eclipse.jetty.server.AbstractConnector: Started InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2014-03-12 23:35:44,681] org.eclipse.jetty.server.AbstractConnector: Started SocketConnector@0.0.0.0:8081
+INFO  [2014-03-13 00:32:43,786] org.eclipse.jetty.server.Server: Graceful shutdown SocketConnector@0.0.0.0:8081
+INFO  [2014-03-13 00:32:43,788] org.eclipse.jetty.server.Server: Graceful shutdown InstrumentedBlockingChannelConnector@0.0.0.0:8080
+INFO  [2014-03-13 00:32:43,789] org.eclipse.jetty.server.Server: Graceful shutdown o.e.j.s.ServletContextHandler{/,null}
+INFO  [2014-03-13 00:32:43,789] org.eclipse.jetty.server.Server: Graceful shutdown o.e.j.s.ServletContextHandler{/,null}
+INFO  [2014-03-13 00:32:45,841] org.eclipse.jetty.server.handler.ContextHandler: stopped o.e.j.s.ServletContextHandler{/,null}
+INFO  [2014-03-13 00:32:45,841] org.eclipse.jetty.server.handler.ContextHandler: stopped o.e.j.s.ServletContextHandler{/,null}
+INFO  [2014-03-13 00:32:45,892] org.eclipse.jetty.util.thread.ShutdownThread: shutdown already commenced

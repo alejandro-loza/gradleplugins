@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="libs">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/build/libs/gradleplugins-null-shadow.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/libs/gradleplugins-null.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

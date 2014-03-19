@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: manu
+Build-Jdk: 1.6.0_29
+Main-Class: org.hibernate.annotations.common.Version
+Implementation-Title: Hibernate Commons Annotations
+Implementation-URL: http://hibernate.org
+Implementation-Vendor: hibernate.org
+Implementation-Vendor-Id: hibernate.org
+Implementation-Version: 4.0.1.Final
+

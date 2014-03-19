@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Main-Class: com.training.gradleplugins.GradlepluginsService
+Built-Date: Thu Mar 13 13:00:03 CST 2014
+Built-By: pinky
+Build-Jdk: 1.7.0_45
+Implementation-Title: gradleplugins
+Implementation-Version: null
+Implementation-Vendor-Id: "com.training"
+

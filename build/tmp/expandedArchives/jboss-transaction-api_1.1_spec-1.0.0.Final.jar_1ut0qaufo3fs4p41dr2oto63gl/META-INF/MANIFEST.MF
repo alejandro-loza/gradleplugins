@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: smcgowan
+Build-Jdk: 1.6.0_21
+Specification-Title: Transaction 1.1 API
+Specification-Version: 1.0.0.Final
+Specification-Vendor: JBoss, a division of Red Hat, Inc.
+Implementation-Title: Transaction 1.1 API
+Implementation-Version: 1.0.0.Final
+Implementation-Vendor-Id: org.jboss.spec.javax.transaction
+Implementation-Vendor: JBoss, a division of Red Hat, Inc.
+Implementation-URL: http://www.jboss.org/jboss-transaction-api_1.1_spec
+
