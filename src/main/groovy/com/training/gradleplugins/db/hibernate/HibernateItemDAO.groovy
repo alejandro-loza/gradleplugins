@@ -25,4 +25,10 @@ public class HibernateItemDAO extends AbstractDAO<Item> implements ItemDAO {
     def List<Item> findAll() {
         list(namedQuery("com.training.gradleplugins.core.Item.findAll"))
     }
+
+    def Item findById(){
+       namedQuery("com.training.gradleplugins.core.Item.findById")
+    }
+
+
 }

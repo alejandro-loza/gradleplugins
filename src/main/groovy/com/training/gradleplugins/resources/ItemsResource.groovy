@@ -13,21 +13,18 @@ import javax.ws.rs.core.MediaType
 
 @Path("/items")
 @Produces(MediaType.APPLICATION_JSON)
-class GradlepluginsResource {
+class ItemsResource {
     private final ItemDAO itemDAO
 
-    GradlepluginsResource(ItemDAO itemDAO) {
+    ItemsResource(ItemDAO itemDAO) {
         this.itemDAO = itemDAO
     }
 
     @GET
     @Timed
     @UnitOfWork
-    public List<Item> listItems() {
-        def items = itemDAO.findAll()
-        items.each {
-            println "$it.id  $it.attributeValue"
-        }
-        items
+    List<Item> listItems() {
+        itemDAO.findAll()
     }
+
 }
