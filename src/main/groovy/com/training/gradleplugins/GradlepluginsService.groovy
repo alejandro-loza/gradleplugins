@@ -4,6 +4,8 @@ import com.google.common.collect.ImmutableList
 import com.training.gradleplugins.core.Item
 import com.training.gradleplugins.db.ItemDAO
 import com.training.gradleplugins.db.hibernate.HibernateItemDAO
+import com.training.gradleplugins.resources.HelloGroovyResource
+import com.training.gradleplugins.resources.HelloWorldResource
 import com.training.gradleplugins.resources.ItemResource
 import com.training.gradleplugins.resources.ItemsResource
 import com.yammer.dropwizard.Service
@@ -52,12 +54,14 @@ class GradlepluginsService extends Service<GradlepluginsConfiguration> {
 
     @Override
     public void run(GradlepluginsConfiguration configuration, Environment environment) throws ClassNotFoundException {
-        // de aqui corren mis resources
-//        final ItemDAO dao = new HibernateItemDAO(hibernateBundle.getSessionFactory());
-        final DBIFactory factory = new DBIFactory();
-        final DBI jdbi = factory.build(environment, configuration.getDatabaseConfiguration(), "mysql");
-        final ItemDAO dao = jdbi.onDemand(ItemDAO.class);
-        environment.addResource(new ItemsResource(dao));
-        environment.addResource(new ItemResource(dao));
+
+        final HibernateItemDAO dao = new HibernateItemDAO(hibernateBundle.getSessionFactory());
+//        final DBIFactory factory = new DBIFactory();
+//        final DBI jdbi = factory.build(environment, configuration.getDatabaseConfiguration(), "mysql");
+//        final ItemDAO dao = jdbi.onDemand(ItemDAO.class);
+        environment.addResource(new ItemsResource(dao))
+        environment.addResource(new ItemResource(dao))
+        environment.addResource(new HelloWorldResource())
+        environment.addResource(new HelloGroovyResource())
     }
 }

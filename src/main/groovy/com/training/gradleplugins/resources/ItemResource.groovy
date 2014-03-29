@@ -28,6 +28,7 @@ class ItemResource {
     @Timed
     @UnitOfWork
     Item getItem(@PathParam("id") Long itemId) {
+
         final item = itemDAO.findById(itemId)
         if (!item.isPresent()) {
             throw new NotFoundException("No such item.")
