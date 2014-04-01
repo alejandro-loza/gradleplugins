@@ -24,6 +24,11 @@ public class HibernateItemDAO extends AbstractDAO<Item> implements ItemDAO {
         persist(item).id
     }
 
+
+    Long update(@Bind Item item, Long itemId) {
+        persist(item).id
+    }
+
     def List<Item> findAll() {
         list(namedQuery("com.training.gradleplugins.core.Item.findAll"))
     }
