@@ -11,6 +11,7 @@ import javax.persistence.NamedQueries
 import javax.persistence.NamedQuery
 import javax.persistence.Table
 import javax.validation.constraints.NotNull
+import java.sql.Timestamp
 
 @Entity
 @Table(name = 'item')
@@ -76,6 +77,9 @@ class Item implements Serializable {
     void setNormalDateCreated(Date date) {
         dateCreated = new DateTime(date.time)
     }
+//    void setNormalDateCreated(DateTime date) {
+//        dateCreated = new Timestamp(date.getMillis()) as DateTime
+//    }
 
     @JsonIgnore
     Date getNormalLastUpdated() {
@@ -85,4 +89,7 @@ class Item implements Serializable {
     void setLastUpdated(Date date) {
         lastUpdated = new DateTime(date.time)
     }
+//    void setLastUpdated(DateTime date) {
+//        lastUpdated = new Timestamp(date.getMillis()) as DateTime
+//    }
 }

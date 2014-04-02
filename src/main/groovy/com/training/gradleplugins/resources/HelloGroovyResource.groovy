@@ -1,6 +1,8 @@
 package com.training.gradleplugins.resources
 
 import com.training.gradleplugins.core.Notificacion
+import com.training.gradleplugins.core.User
+import com.yammer.dropwizard.auth.Auth
 import com.yammer.metrics.annotation.Timed
 
 import javax.ws.rs.*
@@ -12,8 +14,8 @@ class HelloGroovyResource {
     public static final String CLICHED_MESSAGE = "Hello!";
 
     @GET
-    public String getHello() {
-        return CLICHED_MESSAGE
+    public String getHello(@Auth User user) {
+        return CLICHED_MESSAGE + user
     }
 
 //    @POST

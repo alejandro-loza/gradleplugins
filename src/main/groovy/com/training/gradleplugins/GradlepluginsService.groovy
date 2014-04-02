@@ -1,7 +1,9 @@
 package com.training.gradleplugins
 
 import com.google.common.collect.ImmutableList
+import com.training.gradleplugins.auth.ExampleAuthenticator
 import com.training.gradleplugins.core.Item
+import com.training.gradleplugins.core.User
 import com.training.gradleplugins.db.ItemDAO
 import com.training.gradleplugins.db.hibernate.HibernateItemDAO
 import com.training.gradleplugins.resources.HelloGroovyResource
@@ -10,6 +12,7 @@ import com.training.gradleplugins.resources.ItemResource
 import com.training.gradleplugins.resources.ItemsResource
 import com.yammer.dropwizard.Service
 import com.yammer.dropwizard.assets.AssetsBundle
+import com.yammer.dropwizard.auth.basic.BasicAuthProvider
 import com.yammer.dropwizard.config.Bootstrap
 import com.yammer.dropwizard.config.Environment
 import com.yammer.dropwizard.db.DatabaseConfiguration
@@ -56,6 +59,8 @@ class GradlepluginsService extends Service<GradlepluginsConfiguration> {
     public void run(GradlepluginsConfiguration configuration, Environment environment) throws ClassNotFoundException {
 
         final HibernateItemDAO dao = new HibernateItemDAO(hibernateBundle.getSessionFactory());
+
+        environment.addProvider(new BasicAuthProvider<User>(new ExampleAuthenticator(), "SUPER SECRET STUFF"))
 //        final DBIFactory factory = new DBIFactory();
 //        final DBI jdbi = factory.build(environment, configuration.getDatabaseConfiguration(), "mysql");
 //        final ItemDAO dao = jdbi.onDemand(ItemDAO.class);

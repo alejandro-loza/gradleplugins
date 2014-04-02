@@ -6,11 +6,13 @@ import com.training.gradleplugins.db.ItemDAO
 import com.yammer.dropwizard.hibernate.UnitOfWork
 import com.yammer.metrics.annotation.Timed
 
+import javax.ws.rs.DELETE
 import javax.ws.rs.GET
 import javax.ws.rs.PUT
 import javax.ws.rs.Path
 import javax.ws.rs.PathParam
 import javax.ws.rs.Produces
+import javax.ws.rs.WebApplicationException
 import javax.ws.rs.core.MediaType
 
 /**
@@ -37,14 +39,27 @@ class ItemResource {
         item.get()
     }
 
+
+    @DELETE
+    @Timed
+    @UnitOfWork
+    void delete(@PathParam("id") Long itemId) {
+
+        final item = itemDAO.findById(itemId)
+        if (!item.isPresent()) {
+            throw new NotFoundException("No such item.")
+        }
+        itemDAO.delete(item)
+        //item.get()
+    }
+
     @PUT
     @Timed
     @UnitOfWork
     Item update(@PathParam("id") Long itemId, Item item){
         final getItem = itemDAO.findById(itemId)
 
-
-//        try {
+        try {
         if (!getItem.isPresent()) {
             throw new NotFoundException("No found item.")
         }
@@ -64,8 +79,8 @@ class ItemResource {
                 if(item.attributeLabel){
                     queryItem.attributeLabel =  item.attributeLabel
                 }
-                if(item.attributeTypeId){
-                    queryItem.attributeTypeId =  item.attributeTypeId
+                if(item.attributeName){
+                    queryItem.attributeName =  item.attributeName
                 }
                 if(item.attributeTypeId){
                     queryItem.attributeTypeId =  item.attributeTypeId
@@ -79,17 +94,17 @@ class ItemResource {
 //
                 queryItem.dateCreated =  queryItem.dateCreated
                 queryItem.lastUpdated = item.lastUpdated.toDate()
-                queryItem.version =  item.version ++
-//
+                queryItem.version += 1
+            /* */
                 queryItem.id = itemDAO.update(queryItem, itemId)
 
             queryItem
         }
-//        }
-//       catch (Exception e) {
-//
-//            throw new WebApplicationException(e)
-//
+        }
+       catch (Exception e) {
+
+            throw new WebApplicationException(e)
+         }
         }
 
 }

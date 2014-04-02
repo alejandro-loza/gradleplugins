@@ -25,6 +25,10 @@ public interface ItemDAO  {
     @GetGeneratedKeys
     Long create (@BindBean Item item)
 
+    @RegisterMapper(OptionalItemMapper)
+    @SqlQuery("delete from item where id = :itemId")
+    Optional<Item> delete(@Bind('itemId') Item item)
+
 
     @SqlUpdate("update item SET version =:version  , attribute_name:attributeName, attribute_label:attributeLabel, attribute_value:attributeValue, attribute_type_id:attributeTypeId, date_created:dateCreated, last_updated:lastUpdated, deleted= deleted, item_group_id: itemGroupId, status_id:statusId, priority:priority WHERE id=:itemId")
     @GetGeneratedKeys
