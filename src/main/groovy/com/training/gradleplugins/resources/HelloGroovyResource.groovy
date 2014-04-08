@@ -1,9 +1,10 @@
 package com.training.gradleplugins.resources
 
-import com.training.gradleplugins.core.Notificacion
+
 import com.training.gradleplugins.core.User
 import com.yammer.dropwizard.auth.Auth
 import com.yammer.metrics.annotation.Timed
+import com.training.gradleplugins.resources.ItemGroupResource
 
 import javax.ws.rs.*
 import javax.ws.rs.core.*
@@ -13,9 +14,13 @@ import javax.ws.rs.core.*
 class HelloGroovyResource {
     public static final String CLICHED_MESSAGE = "Hello!";
 
+
+
+
     @GET
     public String getHello(@Auth User user) {
-        return CLICHED_MESSAGE + user
+
+        return CLICHED_MESSAGE + user.name
     }
 
 //    @POST
@@ -31,10 +36,5 @@ class HelloGroovyResource {
 //        return Response.ok(stringBuilder, MediaType.APPLICATION_JSON).build()
 //    }
 
-    @POST
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Timed
-    Notificacion testPost(Notificacion notification) {
-        notification
-    }
+
 }

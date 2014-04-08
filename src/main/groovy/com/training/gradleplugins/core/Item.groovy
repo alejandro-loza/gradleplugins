@@ -10,6 +10,7 @@ import javax.persistence.Id
 import javax.persistence.NamedQueries
 import javax.persistence.NamedQuery
 import javax.persistence.Table
+import javax.persistence.Version
 import javax.validation.constraints.NotNull
 import java.sql.Timestamp
 
@@ -31,6 +32,7 @@ class Item implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id
 
+    @Version
     @Column(nullable = false)
     Long version = 0
 
@@ -71,7 +73,7 @@ class Item implements Serializable {
 
     @JsonIgnore
     Date getNormalDateCreated() {
-      dateCreated?.toDate()
+        dateCreated?.toDate()
     }
 
     void setNormalDateCreated(Date date) {
