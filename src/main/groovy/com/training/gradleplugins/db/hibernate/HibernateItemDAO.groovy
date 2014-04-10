@@ -8,8 +8,6 @@ import com.yammer.dropwizard.hibernate.AbstractDAO
 import org.hibernate.SessionFactory
 import org.skife.jdbi.v2.sqlobject.Bind
 
-import java.util.List
-
 public class HibernateItemDAO extends AbstractDAO<Item> implements ItemDAO {
     def HibernateItemDAO(SessionFactory factory) {
         super(factory)

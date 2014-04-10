@@ -1,8 +1,7 @@
 package com.training.gradleplugins.resources
 
-import com.training.gradleplugins.core.ItemGroup
+
 import com.training.gradleplugins.core.ItemGroupProfile
-import com.training.gradleplugins.db.hibernate.ItemGroupDAO
 import com.training.gradleplugins.db.hibernate.ItemGroupProfileDAO
 import com.yammer.dropwizard.hibernate.UnitOfWork
 import com.yammer.metrics.annotation.Timed

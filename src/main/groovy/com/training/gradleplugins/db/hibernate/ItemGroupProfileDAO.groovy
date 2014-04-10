@@ -1,6 +1,6 @@
 package com.training.gradleplugins.db.hibernate
 
-import com.training.gradleplugins.core.ItemGroup
+
 import com.training.gradleplugins.core.ItemGroupProfile
 import com.yammer.dropwizard.hibernate.AbstractDAO
 import org.hibernate.SessionFactory

@@ -1,9 +1,6 @@
 package com.training.gradleplugins.resources
 
-import com.sun.jersey.api.NotFoundException
-import com.training.gradleplugins.core.Item
 import com.training.gradleplugins.core.ItemGroup
-import com.training.gradleplugins.db.ItemDAO
 import com.training.gradleplugins.db.hibernate.ItemGroupDAO
 import com.yammer.dropwizard.hibernate.UnitOfWork
 import com.yammer.metrics.annotation.Timed

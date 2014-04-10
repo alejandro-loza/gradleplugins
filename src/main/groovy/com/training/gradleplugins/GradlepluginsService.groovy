@@ -2,14 +2,13 @@ package com.training.gradleplugins
 
 import com.google.common.collect.ImmutableList
 import com.training.gradleplugins.auth.ExampleAuthenticator
-import com.training.gradleplugins.core.Brand
-import com.training.gradleplugins.core.CategoryType
-import com.training.gradleplugins.core.Item
-import com.training.gradleplugins.core.ItemGroup
+
+
 import com.training.gradleplugins.core.ItemGroupProfile
 import com.training.gradleplugins.core.ItemType
 import com.training.gradleplugins.core.User
-import com.training.gradleplugins.core.Vertical
+
+import com.training.gradleplugins.core.*
 import com.training.gradleplugins.db.hibernate.HibernateItemDAO
 import com.training.gradleplugins.db.hibernate.ItemGroupDAO
 import com.training.gradleplugins.db.hibernate.ItemGroupProfileDAO
