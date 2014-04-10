@@ -1,5 +1,7 @@
 package com.training.gradleplugins.core
 
+import org.hibernate.annotations.ManyToAny
+import org.hibernate.metamodel.relational.state.ManyToOneRelationalState
 import org.joda.time.DateTime
 
 import javax.persistence.Column
@@ -12,6 +14,7 @@ import javax.persistence.ManyToOne
 import javax.persistence.MapsId
 import javax.persistence.NamedQueries
 import javax.persistence.NamedQuery
+import javax.persistence.OneToMany
 import javax.persistence.OneToOne
 import javax.persistence.Table
 import javax.persistence.Version
@@ -100,10 +103,10 @@ class ItemGroupProfile implements Serializable {
     Vertical vertical
 
 //
-//    @MapsId @ManyToOne
-//    @JoinColumn(name = "item_group_id")
-    @Column(name = 'item_group_id', nullable = false)
-    Long itemGroup
+    @MapsId @OneToOne
+    @JoinColumn(name = "item_group_id")
+//    @Column(name = 'item_group_id', nullable = false)
+    ItemGroup itemGroup
 //  static belongsTo = [itemGroup: ItemGroup]
 //  static hasMany = [skuProfiles: SkuProfile]
     @Column(name = 'cashback', nullable = false)

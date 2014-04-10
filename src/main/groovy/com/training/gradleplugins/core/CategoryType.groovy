@@ -1,5 +1,7 @@
 package com.training.gradleplugins.core
 
+import com.fasterxml.jackson.annotation.JsonIgnore
+
 import javax.persistence.Column
 import javax.persistence.Embeddable
 import javax.persistence.Entity
@@ -17,10 +19,12 @@ import javax.validation.constraints.NotNull
 class CategoryType {
 
     @Id
+    @JsonIgnore
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id
 
     @Version
+    @JsonIgnore
     @Column(nullable = false)
     Long version = 0
 

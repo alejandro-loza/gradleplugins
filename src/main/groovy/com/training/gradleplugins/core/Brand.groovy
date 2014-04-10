@@ -18,9 +18,10 @@ import javax.validation.constraints.NotNull
 @Entity
 @Embeddable
 @Table(name = 'brand')
-class Brand {
+class Brand implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = 'id')
     Long id
 
     @Version

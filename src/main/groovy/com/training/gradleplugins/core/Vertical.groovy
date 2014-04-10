@@ -21,11 +21,12 @@ import javax.persistence.Table
                 query = "SELECT v FROM Vertical v"
         )
 ])
-class Vertical {
+class Vertical  implements Serializable{
 
     @JsonIgnore
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name= 'id')
     Long id
 
     @JsonIgnore

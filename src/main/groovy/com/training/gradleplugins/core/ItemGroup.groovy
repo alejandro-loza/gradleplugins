@@ -6,6 +6,7 @@ import javax.persistence.AttributeOverride
 import javax.persistence.AttributeOverrides
 import javax.persistence.Column
 import javax.persistence.Embedded
+import javax.persistence.EmbeddedId
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue
 import javax.persistence.GenerationType
@@ -86,14 +87,19 @@ class ItemGroup implements Serializable  {
     @Column(name = 'sales_department_type_id',nullable = false)
     Long salesDepartmentType
 
-    @Column(name = 'category_type_id',nullable = false)
-    Long categoryType
+
+    @MapsId @ManyToOne
+    @JoinColumn(name = 'category_type_id')
+//    @Column(name = 'category_type_id',nullable = false)
+    CategoryType categoryType
 
     @Column(name = 'sub_category_type_id',nullable = false)
     Long subCategoryType
 
-    @Column(name = 'item_type_id',nullable = false)
-    Long itemType
+//    @Column(name = 'item_type_id',nullable = false)
+    @MapsId @ManyToOne
+    @JoinColumn(name = "item_type_id")
+    ItemType itemType
     @Column(name = 'seller_id',nullable = false)
     Long seller
 
@@ -103,10 +109,18 @@ class ItemGroup implements Serializable  {
 //            @AttributeOverride(name="vertical", column = @Column(name="vertical_id") )
 //    )
 //    Vertical vertical
+//    @MapsId @ManyToOne
+//    @JoinColumn(name = "vertical_id")
+//    Vertical vertical
+
+
     @MapsId @ManyToOne
     @JoinColumn(name = "vertical_id")
     Vertical vertical
-
+//    @Embedded
+//
+//    @AttributeOverride(name = "id", column = @Column(name = "vertical_id"))
+//    Vertical vertical
 
     @Column(name = 'provider_id',nullable = false)
     Long provider
@@ -115,6 +129,10 @@ class ItemGroup implements Serializable  {
     @MapsId @ManyToOne
     @JoinColumn(name = "brand_id",nullable = false)
     Brand brand
+
+
+//    @Column(name = 'brand_id',nullable = false)
+//    Long brand
 
 //    @Column(name = 'ref',nullable = false)
 //  String ref

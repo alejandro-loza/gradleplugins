@@ -7,6 +7,7 @@ import com.training.gradleplugins.core.CategoryType
 import com.training.gradleplugins.core.Item
 import com.training.gradleplugins.core.ItemGroup
 import com.training.gradleplugins.core.ItemGroupProfile
+import com.training.gradleplugins.core.ItemType
 import com.training.gradleplugins.core.User
 import com.training.gradleplugins.core.Vertical
 import com.training.gradleplugins.db.hibernate.HibernateItemDAO
@@ -33,10 +34,10 @@ class GradlepluginsService extends Service<GradlepluginsConfiguration> {
     public static void main(String[] args) throws Exception {
         new GradlepluginsService().run(args)
     }
-
+     List entityes = [Item,ItemGroup, ItemType,ItemGroupProfile,Vertical,Brand,CategoryType]
 
     private final HibernateBundle<GradlepluginsConfiguration> hibernateBundle =
-            new HibernateBundle<GradlepluginsConfiguration>(ImmutableList.copyOf([Item,ItemGroup, ItemGroupProfile,Vertical,Brand]), new SessionFactoryFactory()) {
+            new HibernateBundle<GradlepluginsConfiguration>(ImmutableList.copyOf(entityes), new SessionFactoryFactory()) {
         @Override
         public DatabaseConfiguration getDatabaseConfiguration(GradlepluginsConfiguration configuration) {
             return configuration.getDatabaseConfiguration();
