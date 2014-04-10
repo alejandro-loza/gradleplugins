@@ -1,6 +1,5 @@
 package com.training.gradleplugins.db.hibernate
 
-
 import com.training.gradleplugins.core.Vertical
 import com.yammer.dropwizard.hibernate.AbstractDAO
 import org.hibernate.SessionFactory

@@ -98,13 +98,14 @@ class ItemGroupProfile implements Serializable {
     @Column(name = 'marketing_sale', nullable = false)
     Boolean marketingSale = false
 
-    @MapsId @ManyToOne
-    @JoinColumn(name = "vertical_id")
-    Vertical vertical
 
-//
+    @Column(name = 'vertical_id',nullable = false)
+    Long vertical
+
+
     @MapsId @OneToOne
     @JoinColumn(name = "item_group_id")
+
 //    @Column(name = 'item_group_id', nullable = false)
     ItemGroup itemGroup
 //  static belongsTo = [itemGroup: ItemGroup]
